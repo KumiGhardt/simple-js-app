@@ -1,5 +1,7 @@
 
-alert('Hello World!');
+alert('Hello World!'); //this is an alert to test the ks is working
 
-let favoriteFood = 'Chicken, Chocolate and Grapes';
-document.write(favoriteFood);
+
+//variable of favourite food and the built-in function to DOM
+let favoriteFood = 'Chicken, Chocolate and Grapes'; 
+document.write(favoriteFood); // 
