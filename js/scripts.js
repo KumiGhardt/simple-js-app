@@ -1,7 +1,8 @@
 
-alert('Hello World!'); //this is an alert to test the ks is working
+let pokemonList = [
+    {name: 'Pikachu', height: 0.4, types: ['electric']},
 
+    {name: 'Wigglytuff', height: 1, types: ['fairy', 'normal']},
 
-//variable of favourite food and the built-in function to DOM
-let favoriteFood = 'Chicken, Chocolate and Grapes'; 
-document.write(favoriteFood); // 
+    {name: 'Gloom', height: 0.8, types: ['grass', 'poison']},
+];
