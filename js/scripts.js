@@ -20,7 +20,7 @@ for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height >= 1) {
         document.write(`<div>${pokemonList[i].name} (Height ${pokemonList[i].height}) - Wow, that’s big</div> `) //used template literal form to concatenate the name and height from the array
     } else {
-        document.write(`<div>${pokemonList[i].name} (Height ${pokemonList[i].height}) `)
+        document.write(`<div>${pokemonList[i].name} (Height ${pokemonList[i].height})</div> `)
     }
 };
 
