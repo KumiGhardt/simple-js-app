@@ -1,10 +1,17 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #86c5d6;
-    border: 15px solid #868686;
-    padding: 50px;
-    margin: 20px;
-    width: 50px;
-    height: 70%;
-    line-height: 1.5;
+    background-image: linear-gradient(100deg, #53BAD2, #6551CF, #5AB4DA);
+    /*border: 10px solid #868686;*/
+    font-family: Poppins, sans-serif;
+    
+}
+
+header, div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
