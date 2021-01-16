@@ -12,15 +12,18 @@ let pokemonList = [{
         name: "Gloom",
         height: 0.8,
         types: ["grass", "poison"]
+    },
+    {
+        name: "Blastoise",
+        height: 1.6,
+        types: ["water"]
     }
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-    //target the height in the object to compose the ef-else conditions
-    if (pokemonList[i].height >= 1) {
-        document.write(`<div>${pokemonList[i].name} (Height ${pokemonList[i].height}) - Wow, that’s big</div> `) //used template literal form to concatenate the name and height from the array
+pokemonList.forEach(function (pokemon) {
+    if (pokemon.height >= 1) {
+        document.write(`<div>${pokemon.name} (Height ${pokemon.height}) - Wow, that’s big</div> `) //used template literal form to concatenate the name and height from the array
     } else {
-        document.write(`<div>${pokemonList[i].name} (Height ${pokemonList[i].height})</div> `)
+        document.write(`<div>${pokemon.name} (Height ${pokemon.height})</div> `)
     }
-};
-
+});
