@@ -18,10 +18,10 @@ let pokemonRepository = (function () {
 
     function add(pokemon) {
         if (
-            typeof pokemon === "object" &&
-            "name" in pokemon &&
-            "height" in pokemon &&
-            "types" in pokemon
+            typeof pokemon === 'object' &&
+            'name' in pokemon &&
+            'height' in pokemon &&
+            'types' in pokemon
         ) {
             pokemonList.push(pokemon);
         } else {
@@ -49,6 +49,7 @@ let pokemonRepository = (function () {
     function getAll() {
         return pokemonList;
     }
+
     return {
         add: add,
         getAll: getAll,
