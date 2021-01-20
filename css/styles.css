@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -11,7 +13,8 @@ body {
     font-family: Poppins, sans-serif;
 }
 
-header, div {
+header,
+div {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -19,3 +22,16 @@ header, div {
     padding-top: 30px;
 }
 
+ul {
+    list-style: none;
+}
+
+/* button created by js */
+.button {
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    margin: 25px auto ;
+    padding: 20px;
+    width: 30%;
+}

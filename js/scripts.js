@@ -17,7 +17,33 @@ let pokemonRepository = (function () {
     ];
 
     function add(pokemon) {
-        pokemonList.push(pokemon);
+        if (
+            typeof pokemon === "object" &&
+            "name" in pokemon &&
+            "height" in pokemon &&
+            "types" in pokemon
+        ) {
+            pokemonList.push(pokemon);
+        } else {
+            console.log('pokemon is not correct');
+        }
+    }
+
+    function addListItem(pokemon) {
+        let list = document.querySelector('.pokemon-list'); // create a variable and  assign it the ul
+        let listItem = document.createElement('li'); //create li for the ul
+        let button = document.createElement('button'); //create button- styled on css
+        button.innerText = pokemon.name;
+        button.classList.add('button');
+        listItem.appendChild(button); //append the button to the list item as its child.
+        list.appendChild(listItem); // append the list item to the unordered list as its child.
+        button.addEventListener('click', function () {
+            showDetails(pokemon)
+        });
+    }
+
+    function showDetails(pokemon) {
+        console.log(pokemon);
     }
 
     function getAll() {
@@ -25,14 +51,28 @@ let pokemonRepository = (function () {
     }
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem
     };
 })();
 
+pokemonRepository.add({
+    name: "Nidoking",
+    height: 1.4,
+    types: ["ground", "poison"]
+});
+
+
 pokemonRepository.getAll().forEach(function (pokemon) {
-    if (pokemon.height >= 1) {
+    pokemonRepository.addListItem(pokemon);
+});
+
+
+
+/*
+if (pokemon.height >= 1) {
         document.write(`<div>${pokemon.name} (Height ${pokemon.height}) - Wow, that’s big</div> `) //used template literal form to concatenate the name and height from the array
     } else {
         document.write(`<div>${pokemon.name} (Height ${pokemon.height})</div> `)
     }
-});
+    */
