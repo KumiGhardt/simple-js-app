@@ -13,6 +13,11 @@ let pokemonRepository = (function () {
             name: "Gloom",
             height: 0.8,
             types: ["grass", "poison"]
+        },
+        {
+            name: "Poliwrath",
+            height: 1.3,
+            types: ["water", "fighting"]
         }
     ];
 
