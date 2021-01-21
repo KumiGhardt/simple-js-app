@@ -46,6 +46,12 @@ let pokemonRepository = (function () {
             showDetails(pokemon)
         });
     }
+//function dedicated to adding an event listener to the newly created button 
+    function buttonListener (button, pokemon) {
+        button.addEventListener('click', function () {
+            showDetails(pokemon)
+        });
+    }
 
     function showDetails(pokemon) {
         console.log(pokemon);
