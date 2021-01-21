@@ -28,6 +28,7 @@ let pokemonRepository = (function () {
             console.log("pokemon is not correct");
         }
     }
+    
 
     function addListItem(pokemon) {
         let list = document.querySelector('.pokemon-list'); // create a variable and  assign it the ul
@@ -37,7 +38,13 @@ let pokemonRepository = (function () {
         button.classList.add('button');
         listItem.appendChild(button); //append the button to the list item as its child.
         list.appendChild(listItem); // append the list item to the unordered list as its child.
-        button.addEventListener('click', function (pokemon) {
+        button.addEventListener('click', function () {
+            showDetails(pokemon)
+        });
+    }
+//function dedicated to adding an event listener to the newly created button 
+    function buttonListener (button, pokemon) {
+        button.addEventListener('click', function () {
             showDetails(pokemon)
         });
     }
