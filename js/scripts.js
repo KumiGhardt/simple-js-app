@@ -101,6 +101,7 @@ let pokemonRepository = (function () {
 
         //add image to pokemon card
         let imgElement = document.createElement('img');
+        imgElement.classList.add('img');
         imgElement.src = pokemonDetails.imageUrl;
 
         modal.appendChild(closeButtonElement);
