@@ -1,3 +1,6 @@
+
+
+
 *,
 *::before,
 *::after {
@@ -9,7 +12,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
-    margin: 0;
+    margin: auto;
     font-family: Poppins, sans-serif;
 }
 
@@ -22,13 +25,16 @@ div {
     padding-top: 30px;
 }
 
+/*
 ul {
     list-style: none;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
 }
 
-/* button created by js */
+
+
+/* button created by js 
 .button {
     border-radius: 12px;
     display: flex;
@@ -45,7 +51,8 @@ ul {
     background-color: #53bad2;
 }
 
-/* modal styling */
+
+ modal styling 
 
 #show-dialog,
 #show-modal {
@@ -54,6 +61,7 @@ ul {
     justify-content: center;
     margin: 25px auto;
 }
+
 
 #modal-container {
     position: fixed;
@@ -65,9 +73,9 @@ ul {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
 
-    /* to show it above other content */
+     to show it above other content 
     z-index: 999;
-    /* to allow scrolling if the screen is not high enough*/
+    /* to allow scrolling if the screen is not high enough */ /*
     overflow: auto;
     display: grid;
     text-align: center;
@@ -81,10 +89,6 @@ ul {
     margin: auto;
     display: inline-block;
     box-sizing: border-box;
-    padding: 15px;
-    margin-top: 30vh;
-    width: 100%;
-    max-width: 700px;
     text-align: center;    
 }
 
@@ -108,3 +112,5 @@ ul {
     height: 50%;
     width: 50%;
 }
+
+*/
