@@ -15,10 +15,12 @@ let pokemonRepository = (function () {
     ///POKEMOOON LIST///////////
     function addListItem(pokemon) {
         let list = document.querySelector('.pokemon-list'); // create a variable and  assign it the ul
-        let listItem = document.createElement('li'); //create li for the ul
+        let listItem = document.createElement('list-group'); //create li for the ul
         let button = document.createElement('button'); //create button- styled on css
         button.innerText = pokemon.name;
-        button.classList.add('button');
+        button.classList.add('button', 'list-group-item', 'list-group-item-action', 'active', 'text-center',);
+        listItem.classList.add('list-group-item')
+        
         listItem.appendChild(button); //append the button to the list item as its child.
         list.appendChild(listItem); // append the list item to the unordered list as its child.
         button.addEventListener('click', function () {
@@ -78,13 +80,14 @@ let pokemonRepository = (function () {
     }
 
     //modal code
-    let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('#modal');
 
     function showModal(pokemonDetails) {
         console.log(pokemonDetails);
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
-        modal.classList.add('modal');
+        modal.classList.add('modal-dialog-centered');
+
 
         let closeButtonElement = document.createElement('button');
         closeButtonElement.classList.add('modal-close');

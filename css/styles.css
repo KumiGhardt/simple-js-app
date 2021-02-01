@@ -13,7 +13,8 @@ body {
     background-attachment: fixed;
     height: 100%;
     margin: auto;
-    font-family: Poppins, sans-serif;
+    font-family: Poppins, sans-serif; 
+
 }
 
 header,
@@ -24,6 +25,8 @@ div {
     line-height: 1.5;
     padding-top: 30px;
 }
+
+
 
 /*
 ul {
