@@ -1,6 +1,3 @@
-
-
-
 *,
 *::before,
 *::after {
@@ -13,8 +10,7 @@ body {
     background-attachment: fixed;
     height: 100%;
     margin: auto;
-    font-family: Poppins, sans-serif; 
-
+    font-family: Poppins, sans-serif;
 }
 
 header,
@@ -27,8 +23,6 @@ div {
 }
 
 
-
-/*
 ul {
     list-style: none;
     display: grid;
@@ -37,7 +31,7 @@ ul {
 
 
 
-/* button created by js 
+/* button created by js */
 .button {
     border-radius: 12px;
     display: flex;
@@ -55,9 +49,7 @@ ul {
 }
 
 
- modal styling 
-
-#show-dialog,
+modal styling #show-dialog,
 #show-modal {
     border-radius: 8px;
     display: flex;
@@ -75,10 +67,8 @@ ul {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-
-     to show it above other content 
     z-index: 999;
-    /* to allow scrolling if the screen is not high enough */ /*
+    /* to allow scrolling if the screen is not high enough */
     overflow: auto;
     display: grid;
     text-align: center;
@@ -92,7 +82,7 @@ ul {
     margin: auto;
     display: inline-block;
     box-sizing: border-box;
-    text-align: center;    
+    text-align: center;
 }
 
 .modal-close {
@@ -115,5 +105,3 @@ ul {
     height: 50%;
     width: 50%;
 }
-
-*/
