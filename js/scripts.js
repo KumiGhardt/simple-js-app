@@ -14,21 +14,24 @@ let pokemonRepository = (function () {
     }
     ///POKEMOOON LIST///////////
     function addListItem(pokemon) {
-        let list = document.querySelector('.pokemon-list'); // create a variable and  assign it the ul
+        let list = document.querySelector('.list-group'); // create a variable and  assign it the ul
         let listItem = document.createElement('li'); //create li for the ul
+        listItem.classList.add("list-group-item", "container", "col-6");
         let button = document.createElement('button'); //create button- styled on css
         button.innerText = pokemon.name;
-        button.classList.add('button');
+        button.classList.add('button', 'btn', 'btn-primary', 'btn-lg', 'btn-block', "col-12");
+        button.setAttribute('data-bs-toggle', 'modal');
+        button.setAttribute('data-bs-target', '#pokemonDetailsModal');
         listItem.appendChild(button); //append the button to the list item as its child.
         list.appendChild(listItem); // append the list item to the unordered list as its child.
         button.addEventListener('click', function () {
             showDetails(pokemon)
         });
     }
-    //function dedicated to adding an event listener to the newly created button 
+    //function dedicated to adding an event listener to the newly created button
     function buttonListener(button, pokemon) {
         button.addEventListener('click', function () {
-            showDetails(pokemon, )
+            showDetails(pokemon)
         });
     }
 
@@ -44,7 +47,7 @@ let pokemonRepository = (function () {
         return pokemonList;
     }
 
-    //The LoadList() method will fetch data from the API, then add each Pokémon in the fetched data to pokemonList with the add function you implemented earlier. 
+    //The LoadList() method will fetch data from the API, then add each Pokémon in the fetched data to pokemonList with the add function you implemented earlier.
     function loadList() {
         return fetch(apiUrl).then(function (response) {
             return response.json();
@@ -81,56 +84,28 @@ let pokemonRepository = (function () {
     let modalContainer = document.querySelector('#modal-container');
 
     function showModal(pokemonDetails) {
-        console.log(pokemonDetails);
-        modalContainer.innerHTML = '';
-        let modal = document.createElement('div');
-        modal.classList.add('modal');
+        let modalBody = document.getElementById('modal-body');
+        let modalTitle = document.getElementById('pokemon-name');
+        modalBody.innerHTML = '';
+        modalTitle.innerHTML = '';
 
-        let closeButtonElement = document.createElement('button');
-        closeButtonElement.classList.add('modal-close');
-        closeButtonElement.innerText = 'Close';
-        closeButtonElement.addEventListener('click', hideModal);
-
-        //add pokemon name
-        let titleElement = document.createElement('h1');
-        titleElement.innerText = pokemonDetails.name;
-
-        //add height to pokemon details
-        let contentElement = document.createElement('p');
-        contentElement.innerText = `Height:  ${pokemonDetails.height}`;
-
-        //add image to pokemon card
         let imgElement = document.createElement('img');
         imgElement.classList.add('img');
         imgElement.src = pokemonDetails.imageUrl;
 
-        modal.appendChild(closeButtonElement);
-        modal.appendChild(titleElement);
-        modal.appendChild(contentElement);
-        modal.appendChild(imgElement);
-        modalContainer.appendChild(modal);
+        let pokemonHeight = document.createElement('p');
 
-        modalContainer.classList.add('is-visible');
+        modalTitle.innerHTML = pokemonDetails.name;
+        pokemonHeight.innerHTML = `Height: ${pokemonDetails.height}m`;
 
+        modalBody.appendChild(imgElement);
+        modalBody.appendChild(pokemonHeight);
     };
-
-    function hideModal() {
-        modalContainer.classList.remove('is-visible');
-    }
-
 
     // modal escape key to hide the modal
     window.addEventListener('keydown', (e) => {
         let modalContainer = document.querySelector('#modal-container');
         if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-            hideModal();
-        }
-    });
-
-    //event listener for clicking outside of the modal
-    modalContainer.addEventListener('click', (e) => {
-        let target = e.target;
-        if (target === modalContainer) {
             hideModal();
         }
     });
