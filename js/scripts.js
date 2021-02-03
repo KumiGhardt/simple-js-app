@@ -16,7 +16,7 @@ let pokemonRepository = (function () {
     function addListItem(pokemon) {
         let list = document.querySelector('.list-group'); // create a variable and  assign it the ul
         let listItem = document.createElement('li'); //create li for the ul
-        listItem.classList.add("list-group-item", "container", "col-6");
+        listItem.classList.add('list-group-item', 'container', 'col-6');
         let button = document.createElement('button'); //create button- styled on css
         button.innerText = pokemon.name;
         button.classList.add('button', 'btn', 'btn-primary', 'btn-lg', 'btn-block', 'col-12');
